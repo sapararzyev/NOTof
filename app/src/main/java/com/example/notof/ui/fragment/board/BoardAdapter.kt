@@ -1,4 +1,4 @@
-package com.example.notof.iu.fragment.board
+package com.example.notof.ui.fragment.board
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,11 +8,12 @@ import com.example.notof.R
 import com.example.notof.databinding.BoardItemBinding
 
 
-class BoardAdapter(private val listener : StartListener ) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
+class BoardAdapter(private val listener : StartListener ) :
+    RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
 
     val titleList = listOf("зометки","контакты","конец")
     val desList = listOf("Добавлять","звонить","Достып ко всем контактам","Это все что есть")
-    val imgList = listOf(R.drawable.img,R.drawable.img_1,R.drawable.img_2)
+    val imgList = listOf(R.drawable.img,R.drawable.img1,R.drawable.img2)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         val binding = BoardItemBinding
             .inflate(LayoutInflater.from(parent.context),parent,false)
@@ -22,7 +23,7 @@ class BoardAdapter(private val listener : StartListener ) : RecyclerView.Adapter
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
         holder.pnBind(position)
         holder.binding.btnBoardStart.setOnClickListener{
-            listener.Start()
+            listener.start()
         }
     }
     override fun getItemCount(): Int = titleList.size
@@ -34,7 +35,7 @@ class BoardAdapter(private val listener : StartListener ) : RecyclerView.Adapter
             binding.tvBoardTitle.text = titleList[position]
             binding.tvBoardTDes.text = desList[position]
 
-            if (position == 2) {
+            if (position == titleList.size - 1) {
                 binding.btnBoardStart.visibility = View.VISIBLE
             } else {
                 binding.btnBoardStart.visibility = View.GONE
@@ -42,6 +43,6 @@ class BoardAdapter(private val listener : StartListener ) : RecyclerView.Adapter
         }
     }
     interface StartListener{
-        fun Start()
+        fun start()
     }
 }

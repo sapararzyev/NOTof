@@ -1,17 +1,16 @@
-package com.example.notof.iu.fragment.note
+package com.example.notof.ui.fragment.note
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
-import android.content.ContentValues
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Update
 import com.example.notof.R
 import com.example.notof.base.BaseFragment
 import com.example.notof.databinding.FragmentNoteBinding
-import com.example.notof.iu.App
+import com.example.notof.app.App
 import com.example.notof.model.NoteModel
 
 
@@ -22,7 +21,7 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
     override fun setubIU() {
         adabter = NoteAdabter(this)
         binding.rvNote.adapter = adabter
-        adabter.addNote(App.db.getDao().getAllNote())
+        adabter.addNote(App.db.getDao().getAllNote() as ArrayList<NoteModel>)
     }
 
 
@@ -32,8 +31,12 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
        binding.btnaddNote.setOnClickListener{
            container.navigate(R.id.addNoteFragment)
        }
+        binding.btnNote.setOnClickListener {
+            container.navigate(R.id.pofileFragment)
+        }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun deleteNote(){
         val simplleColbeck
         = object : SimpleCallback(0,ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
@@ -52,6 +55,7 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(FragmentNoteBinding::infl
                     }
                     .setPositiveButton("да"){_:DialogInterface,_:Int ->
                         adabter.deleteNote(viewHolder.adapterPosition)
+                        adabter.notifyItemChanged(viewHolder.adapterPosition)
                     }
                     .show()
             }

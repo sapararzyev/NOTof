@@ -1,9 +1,8 @@
-package com.example.notof.iu.Utils
+package com.example.notof.ui.utils
 
 import android.content.SharedPreferences
 
 class Prefs(private val preferences :SharedPreferences) {
-
     fun seveBoardStart(){
         preferences.edit().putBoolean("isShow",true).apply()
     }

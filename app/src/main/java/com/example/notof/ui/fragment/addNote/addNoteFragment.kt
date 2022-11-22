@@ -1,10 +1,8 @@
-package com.example.notof.iu.fragment.addNote
+package com.example.notof.ui.fragment.addNote
 
-import android.widget.Toast
-import androidx.core.text.set
 import com.example.notof.base.BaseFragment
 import com.example.notof.databinding.FragmentAddNoteBinding
-import com.example.notof.iu.App
+import com.example.notof.app.App
 import com.example.notof.model.NoteModel
 
 
@@ -18,9 +16,9 @@ class addNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
             binding.etTitle.setText(title.toString())
             binding.etDes.setText(desc.toString())
             binding.btnSaveNote.setOnClickListener {
-        App.db.getDao().upNote(NoteModel
-        (id, binding.etTitle.text.toString(), binding.etDes.text.toString()))
-         container.navigateUp()
+            App.db.getDao().upNote(NoteModel
+            (id, binding.etTitle.text.toString(), binding.etDes.text.toString()))
+            container.navigateUp()
 } }else{
             binding.btnSaveNote.setOnClickListener{
                 val title = binding.etTitle.text.toString()
@@ -30,8 +28,6 @@ class addNoteFragment : BaseFragment<FragmentAddNoteBinding>(FragmentAddNoteBind
 
             }
         }
-
-
 
     }
 }

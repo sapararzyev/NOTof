@@ -6,10 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.notof.model.NoteModel
 
-@Database(entities = [NoteModel::class], version = 1)
+@Database(entities = [NoteModel::class], version = 1, exportSchema = false)
 abstract class NoteDataBase : RoomDatabase() {
-    abstract fun getDao():NoteDao
 
+    abstract fun getDao():NoteDao
     companion object{
         private lateinit var INSTANCE:NoteDataBase
 

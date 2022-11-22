@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".iu.fragment.addNote.addNoteFragment">
+    tools:context=".ui.fragment.addNote.addNoteFragment">
 
     <EditText
         android:layout_width="match_parent"

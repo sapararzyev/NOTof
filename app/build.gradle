@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
  android {
@@ -44,8 +45,8 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
    //navigation
     def nav_version = "2.5.3"
@@ -60,4 +61,14 @@ dependencies {
 
     //TabsIndicator
     implementation("com.tbuonomo:dotsindicator:4.3")
+
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 }

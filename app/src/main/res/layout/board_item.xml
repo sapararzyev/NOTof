@@ -21,6 +21,7 @@
     <TextView
         android:textSize="24sp"
         android:textColor="@color/black"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title"
@@ -29,6 +30,7 @@
     <TextView
         android:textSize="24sp"
         android:layout_width="match_parent"
+        android:gravity="center"
         android:layout_height="wrap_content"
         android:text="Description"
         android:id="@+id/tvBoardTDes"/>

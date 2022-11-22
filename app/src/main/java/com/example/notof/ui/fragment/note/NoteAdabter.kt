@@ -1,25 +1,24 @@
-package com.example.notof.iu.fragment.note
+package com.example.notof.ui.fragment.note
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notof.databinding.ItemNoteBinding
-import com.example.notof.iu.App
+import com.example.notof.app.App
 import com.example.notof.model.NoteModel
 
 class NoteAdabter(private val noteClikInterfase : NoteClikInterfase) : RecyclerView.Adapter<NoteAdabter.NoteViewHolder>() {
 
-   private var list:List<NoteModel> = arrayListOf()
+   private var list:ArrayList<NoteModel> = arrayListOf()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addNote(list: List<NoteModel>){
+    fun addNote(list: ArrayList<NoteModel>){
         this.list= list
         notifyDataSetChanged()
     }
-    @SuppressLint("NotifyDataSetChanged")
     fun deleteNote(position: Int){
-        App.db.getDao().DeleteNote(list[position])
+        App.db.getDao().DeleteNote(list.removeAt(position))
         notifyItemRemoved(position)
 
     }
