@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_contack" />
     <fragment
         android:id="@+id/pofileFragment"
-        android:name="com.example.notof.ui.profile.PofileFragment"
+        android:name="com.example.notof.ui.fragment.profile.PofileFragment"
         android:label="fragment_pofile"
         tools:layout="@layout/fragment_pofile" />
 </navigation>

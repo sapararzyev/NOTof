@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notof.databinding.ItemContactBinding
 import com.example.notof.model.ContactModel
-import com.example.notof.ui.fragment.board.BoardAdapter
 
 class ContactAdabter(private val listner : ShareContactLis) : RecyclerView.Adapter<ContactAdabter.ContaktViewHolder>() {
 

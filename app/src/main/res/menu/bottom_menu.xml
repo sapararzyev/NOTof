@@ -9,4 +9,9 @@
         android:title="contact"
         android:icon="@drawable/person"/>
 
+    <item android:id="@+id/pofileFragment"
+          android:title="profile"
+        android:icon="@drawable/ic_baseline_perm_media_24"/>
+
+
 </menu>

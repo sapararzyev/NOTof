@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.notof.R
 import com.example.notof.databinding.ActivityMainBinding
-import com.example.notof.app.App
+import com.example.notof.ui.utils.App
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
          val appBarConfiguration = AppBarConfiguration(
              setOf(
                  R.id.noteFragment,
-                 R.id.contackFragment
+                 R.id.contackFragment,
+                 R.id.pofileFragment
              )
          )
         setupActionBarWithNavController(controller,appBarConfiguration)
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             val list: ArrayList<Int> = arrayListOf()
             list.add(R.id.contackFragment)
             list.add(R.id.noteFragment)
+            list.add(R.id.pofileFragment)
             if (list.contains(destination.id )){
                 binding.bottomNav.isVisible = true
             }else{

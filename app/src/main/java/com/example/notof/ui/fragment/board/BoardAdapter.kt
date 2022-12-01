@@ -8,12 +8,12 @@ import com.example.notof.R
 import com.example.notof.databinding.BoardItemBinding
 
 
-class BoardAdapter(private val listener : StartListener ) :
-    RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
+class onBoardAdapter(private val listener : StartListener ) :
+    RecyclerView.Adapter<onBoardAdapter.BoardViewHolder>() {
 
     val titleList = listOf("зометки","контакты","конец")
     val desList = listOf("Добавлять","звонить","Достып ко всем контактам","Это все что есть")
-    val imgList = listOf(R.drawable.img,R.drawable.img1,R.drawable.img2)
+    val imgList = listOf(R.raw.contact,R.raw.contact,R.raw.contact)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         val binding = BoardItemBinding
             .inflate(LayoutInflater.from(parent.context),parent,false)
@@ -31,7 +31,7 @@ class BoardAdapter(private val listener : StartListener ) :
     inner class BoardViewHolder( val binding: BoardItemBinding)
         : RecyclerView.ViewHolder(binding.root) {
         fun pnBind(position: Int) {
-            binding.imgBoardItem.setBackgroundResource(imgList[position])
+            binding.imgBoardItem.setAnimation(imgList[position])
             binding.tvBoardTitle.text = titleList[position]
             binding.tvBoardTDes.text = desList[position]
 

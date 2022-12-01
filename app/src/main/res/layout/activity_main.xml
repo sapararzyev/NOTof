@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBDBDB"
     tools:context=".ui.aktivity.MainActivity">
-
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
@@ -22,6 +22,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#91B7D5"
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/bottomNav"
         app:menu="@menu/bottom_menu"/>

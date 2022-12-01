@@ -9,11 +9,12 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
 import com.example.notof.R
+import com.example.notof.ui.fragment.note.NoteAdabter
 
 typealias Inflate<T> = (LayoutInflater,ViewGroup?,Boolean)->T
 abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflate<VB>) : Fragment() {
 
-        private var _binding: VB? = null
+    private var _binding: VB? = null
         protected val binding get() = _binding!!
 
         private var _container: NavController? = null
@@ -38,5 +39,4 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflate<VB>) 
     }
     abstract fun setubIU()
     open fun setupObserver(){}
-
 }

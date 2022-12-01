@@ -14,9 +14,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:constraint_referenced_ids="imgBoardItem,tvBoardTitle,tvBoardTDes,btnBoardStart"/>
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/contact"
         android:id="@+id/imgBoardItem"/>
     <TextView
         android:textSize="24sp"

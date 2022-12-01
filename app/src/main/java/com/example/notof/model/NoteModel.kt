@@ -8,5 +8,6 @@ data class NoteModel (
     @PrimaryKey(autoGenerate = true)
     val id:Int? = null,
     val title: String,
-    val description:String
-        )
+    val description:String,
+    val data: String
+)

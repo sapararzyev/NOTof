@@ -1,9 +1,8 @@
-package com.example.notof.app
+package com.example.notof.ui.utils
 
 import android.app.Application
 import android.content.SharedPreferences
-import com.example.notof.Data.NoteDataBase
-import com.example.notof.ui.utils.Prefs
+import com.example.notof.data.NoteDataBase
 
 class App: Application() {
     private lateinit var preferences: SharedPreferences

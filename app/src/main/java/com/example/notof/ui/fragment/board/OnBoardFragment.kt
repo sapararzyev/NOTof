@@ -6,7 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import com.example.notof.base.BaseFragment
 import com.example.notof.databinding.FragmentOnBoardBinding
-import com.example.notof.app.App
+import com.example.notof.ui.utils.App
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -19,16 +19,15 @@ import com.google.firebase.ktx.Firebase
 
 @Suppress("DEPRECATION")
 class OnBoardFragment : BaseFragment<FragmentOnBoardBinding>(FragmentOnBoardBinding::inflate),
-    BoardAdapter.StartListener {
-    private lateinit var adapter: BoardAdapter
+    onBoardAdapter.StartListener {
+    private lateinit var adapter: onBoardAdapter
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSingInClient: GoogleSignInClient
 
-
     override fun setubIU() {
-        adapter = BoardAdapter(this)
-        binding.onBoardPeger.adapter = adapter
-        binding.boardTab.setViewPager2(binding.onBoardPeger)
+        adapter = onBoardAdapter(this)
+        binding.onBoardPager.adapter = adapter
+        binding.boardTab.setViewPager2(binding.onBoardPager)
         initGoogleSingClient()
     }
 
@@ -81,7 +80,6 @@ class OnBoardFragment : BaseFragment<FragmentOnBoardBinding>(FragmentOnBoardBind
         App.prefs.seveBoardStart()
         singIn()
     }
-
     companion object {
         private const val RC_SIGN_IN = 9001
     }

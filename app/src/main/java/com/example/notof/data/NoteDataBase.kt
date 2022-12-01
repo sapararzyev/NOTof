@@ -1,12 +1,13 @@
-package com.example.notof.Data
+package com.example.notof.data
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.notof.model.NoteModel
 
-@Database(entities = [NoteModel::class], version = 1, exportSchema = false)
+@Database(entities = [NoteModel::class], version = 2, exportSchema = false)
 abstract class NoteDataBase : RoomDatabase() {
 
     abstract fun getDao():NoteDao
@@ -18,7 +19,7 @@ abstract class NoteDataBase : RoomDatabase() {
                     context,
                     NoteDataBase::class.java,
                     "DB NAME"
-                ).allowMainThreadQueries().build()
+                ).fallbackToDestructiveMigration().allowMainThreadQueries().build()
             return INSTANCE
         }
     }
